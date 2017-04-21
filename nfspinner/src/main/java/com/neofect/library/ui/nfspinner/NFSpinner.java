@@ -201,6 +201,14 @@ public class NFSpinner extends LinearLayout {
 		adapter.onShowDropDown();
 	}
 
+	public int getSelectedItemPosition() {
+		if (adapter != null) {
+			return adapter.getSelectedIndex();
+		}
+
+		return -1;
+	}
+
 	public void setListBackground(Drawable drawable) {
 		recyclerView.setBackground(drawable);
 	}
