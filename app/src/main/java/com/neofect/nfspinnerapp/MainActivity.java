@@ -51,6 +51,6 @@ public class MainActivity extends AppCompatActivity {
 		rightSpinner.setAdapter(adapter);
 
 		rightSpinner.setListBackground(ContextCompat.getDrawable(this, R.drawable.rounded_board_bg));
-		rightSpinner.addListItemDecoration(new NFSpinnerSeperateDecoration());
+		rightSpinner.addListItemDecoration(new NFSpinnerSeperateDecoration(5, 5, 0));
 	}
 }
