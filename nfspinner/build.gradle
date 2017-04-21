@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
-    userOrg = 'rouddy'
-    groupId = 'com.rouddy.nativesingleton'
-    artifactId = 'native-singleton'
+    userOrg = 'rouddyneo'
+    groupId = 'com.neofect.library.ui.nfspinner'
+    artifactId = 'nfspinner'
     publishVersion = '1.0'
-    desc = 'Native Singleton.'
-    website = 'https://github.com/rouddy/NativeSingleton'
+    desc = 'NFSpinner'
+    website = 'https://github.com/rouddyNeo/nfspinner'
     issueTracker = "${website}/issues"
     repository = "${website}.git"
 }
