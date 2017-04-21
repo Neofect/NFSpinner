@@ -76,8 +76,6 @@ public class NFSpinner extends LinearLayout {
 		createListView();
 
 		typedArray.recycle();
-
-		setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_board_bg));
 	}
 
 	private void createListView() {
