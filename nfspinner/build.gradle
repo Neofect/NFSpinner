@@ -1,15 +1,18 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 
-publish {
-    userOrg = 'rouddyneo'
-    groupId = 'com.neofect.library.ui.nfspinner'
-    artifactId = 'nfspinner'
-    publishVersion = '1.0.1'
-    desc = 'NFSpinner'
-    website = 'https://github.com/rouddyNeo/nfspinner'
-    issueTracker = "${website}/issues"
-    repository = "${website}.git"
+if (!hasProperty('USE_LOCAL_NFSPINNER')) {
+    apply plugin: 'com.novoda.bintray-release'
+
+    publish {
+        userOrg = 'rouddyneo'
+        groupId = 'com.neofect.library.ui.nfspinner'
+        artifactId = 'nfspinner'
+        publishVersion = '1.0.1'
+        desc = 'NFSpinner'
+        website = 'https://github.com/rouddyNeo/nfspinner'
+        issueTracker = "${website}/issues"
+        repository = "${website}.git"
+    }
 }
 
 android {
