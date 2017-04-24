@@ -10,7 +10,7 @@ import java.util.List;
 
 public abstract class NFSpinnerListAdapter<D, VH extends NFSpinnerViewHolder> extends NFSpinnerBaseAdapter<VH> {
 
-	protected List<D> dataList = null;
+	private List<D> dataList = null;
 
 	public NFSpinnerListAdapter() {
 		dataList = new ArrayList<>();
@@ -22,6 +22,13 @@ public abstract class NFSpinnerListAdapter<D, VH extends NFSpinnerViewHolder> ex
 
 	public void setDataList(List<D> dataList) {
 		this.dataList = dataList;
+		if (dataList != null && dataList.size() > 0) {
+			setSelectedIndex(0);
+		}
+	}
+
+	public D getData(int index) {
+		return dataList.get(index);
 	}
 
 	@Override

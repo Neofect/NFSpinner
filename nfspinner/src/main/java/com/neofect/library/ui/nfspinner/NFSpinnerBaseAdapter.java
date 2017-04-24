@@ -18,7 +18,6 @@ public abstract class NFSpinnerBaseAdapter<VH extends NFSpinnerViewHolder> exten
 
 	void onItemSelected(int position) {
 		notifyItemClicked(position);
-		onItemSelectedImpl(position);
 	}
 
 	protected abstract void onItemSelectedImpl(int position);
@@ -43,6 +42,7 @@ public abstract class NFSpinnerBaseAdapter<VH extends NFSpinnerViewHolder> exten
 
 	void notifyItemSelected(int index) {
 		selectedIndex = index;
+		onItemSelectedImpl(index);
 		spinner.notifyOnItemSelected(index);
 	}
 
