@@ -76,8 +76,6 @@ public class NFSpinner extends LinearLayout {
 		createListView();
 
 		typedArray.recycle();
-
-		setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_board_bg));
 	}
 
 	private void createListView() {
@@ -201,6 +199,14 @@ public class NFSpinner extends LinearLayout {
 		}
 		popupWindow.showAsDropDown(this, left, marginBetween);
 		adapter.onShowDropDown();
+	}
+
+	public int getSelectedItemPosition() {
+		if (adapter != null) {
+			return adapter.getSelectedIndex();
+		}
+
+		return -1;
 	}
 
 	public void setListBackground(Drawable drawable) {

@@ -5,7 +5,7 @@ publish {
     userOrg = 'rouddyneo'
     groupId = 'com.neofect.library.ui.nfspinner'
     artifactId = 'nfspinner'
-    publishVersion = '1.0'
+    publishVersion = '1.0.1'
     desc = 'NFSpinner'
     website = 'https://github.com/rouddyNeo/nfspinner'
     issueTracker = "${website}/issues"
@@ -20,7 +20,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 

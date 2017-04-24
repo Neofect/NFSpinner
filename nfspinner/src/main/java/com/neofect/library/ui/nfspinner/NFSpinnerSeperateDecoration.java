@@ -10,8 +10,15 @@ import android.view.View;
 
 public class NFSpinnerSeperateDecoration extends RecyclerView.ItemDecoration {
 
-	private int topMargin = 5;
-	private int bottomMargin = 5;
+	private final int topMargin;
+	private final int bottomMargin;
+	private final int seperatorMargin;
+
+	public NFSpinnerSeperateDecoration(int topMargin, int bottomMargin, int seperatorMargin) {
+		this.topMargin = topMargin;
+		this.bottomMargin = bottomMargin;
+		this.seperatorMargin = seperatorMargin;
+	}
 
 	@Override
 	public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -19,7 +26,11 @@ public class NFSpinnerSeperateDecoration extends RecyclerView.ItemDecoration {
 
 		if (parent.getChildAdapterPosition(view) == 0) {
 			outRect.top = topMargin;
-		} else if (parent.getChildAdapterPosition(view) == parent.getAdapter().getItemCount()-1) {
+		} else {
+			outRect.top = seperatorMargin;
+		}
+
+		if (parent.getChildAdapterPosition(view) == parent.getAdapter().getItemCount()-1) {
 			outRect.bottom = bottomMargin;
 		}
 
