@@ -32,7 +32,7 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 
 	@Override
 	protected void onBindViewHolderImpl(SpinnerViewholder holder, int position) {
-		DataObject dataObject = dataList.get(position);
+		DataObject dataObject = getData(position);
 		holder.setIconColor(dataObject.getColor());
 		holder.setText(dataObject.getText());
 	}
@@ -75,7 +75,7 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 	}
 
 	private void changeData(int index) {
-		DataObject data = dataList.get(index);
+		DataObject data = getData(index);
 		if (data != null) {
 			spinnerIconView.setVisibility(View.VISIBLE);
 			spinnerIconView.setBackgroundColor(data.getColor());

@@ -265,7 +265,7 @@ public class NFSpinner extends LinearLayout {
 	 */
 	void setSelectedIndex(int position) {
 		if (adapter != null) {
-			if (position >= 0 && position <= adapter.getItemCount()) {
+			if (position >= 0 && position < adapter.getItemCount()) {
 				adapter.notifyItemSelected(position);
 			} else {
 				throw new IllegalArgumentException("Position must be lower than adapter count!");
@@ -283,7 +283,9 @@ public class NFSpinner extends LinearLayout {
 
 	void onListItemClicked(int position) {
 		if (adapter != null) {
-			adapter.notifyItemSelected(position);
+			if (position >= 0 && position < adapter.getItemCount()) {
+				adapter.notifyItemSelected(position);
+			}
 		}
 
 		dismissDropDown();

@@ -58,7 +58,7 @@ public class NFSpinnerDataAdapter extends NFSpinnerListAdapter<String, NFSpinner
 
 	@Override
 	protected void onBindViewHolderImpl(NFSpinnerDataViewHolder holder, int position) {
-		String data = dataList.get(position);
+		String data = getData(position);
 		holder.setText(data);
 		holder.setSelected(position == getSelectedIndex());
 	}
@@ -70,7 +70,7 @@ public class NFSpinnerDataAdapter extends NFSpinnerListAdapter<String, NFSpinner
 
 	// View
 	private void changeData(int position) {
-		String data = dataList.get(position);
+		String data = getData(position);
 		if (data != null) {
 			spinnerTextView.setText(data);
 		} else {
