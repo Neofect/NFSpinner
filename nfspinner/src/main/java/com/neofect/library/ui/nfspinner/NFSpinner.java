@@ -235,6 +235,10 @@ public class NFSpinner extends LinearLayout {
 		setAdapterInternal(adapter);
 	}
 
+	public NFSpinnerBaseAdapter getAdapter() {
+		return adapter;
+	}
+
 	public void setOnItemSelectedListener(OnItemSelectedListener listener) {
 		onItemSelectedListener = listener;
 	}
