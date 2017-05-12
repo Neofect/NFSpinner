@@ -89,7 +89,7 @@ public class NFSpinner extends LinearLayout {
 		recyclerView.setHorizontalScrollBarEnabled(false);
 		recyclerView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.rounded_board_bg));
 
-		popupWindow = new PopupWindow(getContext());
+		popupWindow = new PopupWindow(recyclerView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		popupWindow.setContentView(recyclerView);
 		popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		popupWindow.setOutsideTouchable(true);
@@ -155,8 +155,6 @@ public class NFSpinner extends LinearLayout {
 		int heightPopupSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.AT_MOST);
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-		popupWindow.setWidth(widthPopupSpec);
-		popupWindow.setHeight(heightPopupSpec);
 		recyclerView.measure(widthMeasureSpec, heightMeasureSpec);
 	}
 
@@ -192,7 +190,6 @@ public class NFSpinner extends LinearLayout {
 				break;
 
 			case Gravity.RIGHT: {
-				Log.e("!!!", "recyclerView:"+recyclerView.getMeasuredWidth()+",spinner:"+getMeasuredWidth());
 				left = getMeasuredWidth() - recyclerView.getMeasuredWidth();
 				break;
 			}
