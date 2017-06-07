@@ -37,7 +37,9 @@ public abstract class NFSpinnerBaseAdapter<VH extends NFSpinnerViewHolder> exten
 	}
 
 	public void setSelectedIndex(int index) {
-		spinner.setSelectedIndex(index);
+		if (spinner != null) {
+			spinner.setSelectedIndex(index);
+		}
 	}
 
 	void notifyItemSelected(int index) {
