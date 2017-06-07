@@ -25,6 +25,9 @@ public abstract class NFSpinnerListAdapter<D, VH extends NFSpinnerViewHolder> ex
 		if (dataList != null && dataList.size() > 0) {
 			setSelectedIndex(0);
 		}
+		if (spinner != null) {
+			spinner.setAdapter(this);
+		}
 	}
 
 	public D getData(int index) {
