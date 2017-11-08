@@ -195,6 +195,12 @@ public class NFSpinner extends LinearLayout {
 		}
 		popupWindow.showAsDropDown(this, left, marginBetween);
 		adapter.onShowDropDown();
+		post(new Runnable() {
+			@Override
+			public void run() {
+				adapter.notifyDataSetChanged();
+			}
+		});
 	}
 
 	public int getSelectedItemPosition() {
