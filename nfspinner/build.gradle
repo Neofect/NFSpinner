@@ -7,7 +7,7 @@ if (!hasProperty('USE_LOCAL_NFSPINNER')) {
         userOrg = 'rouddyneo'
         groupId = 'com.neofect.library.ui.nfspinner'
         artifactId = 'nfspinner'
-        publishVersion = '1.0.4'
+        publishVersion = '1.0.5'
         desc = 'NFSpinner'
         website = 'https://github.com/rouddyNeo/nfspinner'
         issueTracker = "${website}/issues"
@@ -23,7 +23,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 2
-        versionName "1.0.4"
+        versionName "1.0.5"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
