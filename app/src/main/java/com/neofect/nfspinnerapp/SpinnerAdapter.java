@@ -1,9 +1,5 @@
 package com.neofect.nfspinnerapp;
 
-import android.animation.ObjectAnimator;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +20,7 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 
 	private View spinnerIconView;
 	private TextView spinnerTextView;
-	private Drawable arrowDrawable;
+	private ImageView arrowView;
 
 	public SpinnerAdapter(List<DataObject> items) {
 		super(items);
@@ -42,10 +38,7 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_spinner, null);
 		spinnerIconView = view.findViewById(R.id.layout_spinner_icon_view);
 		spinnerTextView = (TextView) view.findViewById(R.id.layout_spinner_text_view);
-		ImageView arrowView = (ImageView) view.findViewById(R.id.layout_spinner_arrow_view);
-
-		arrowDrawable = ContextCompat.getDrawable(spinnerTextView.getContext(), com.neofect.library.ui.nfspinner.R.drawable.spinner_data_view_arrow);
-		arrowView.setImageDrawable(arrowDrawable);
+		arrowView = (ImageView) view.findViewById(R.id.layout_spinner_arrow_view);
 
 		changeData(getSelectedIndex());
 
@@ -66,12 +59,12 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 
 	@Override
 	protected void onShowDropDownImpl() {
-		animateArrow(true);
+		spinner.setSelected(true);
 	}
 
 	@Override
 	protected void onHideDropDownImpl() {
-		animateArrow(false);
+		spinner.setSelected(false);
 	}
 
 	private void changeData(int index) {
@@ -84,13 +77,5 @@ public class SpinnerAdapter extends NFSpinnerListAdapter<DataObject, SpinnerView
 			spinnerIconView.setVisibility(View.INVISIBLE);
 			spinnerTextView.setText("");
 		}
-	}
-
-	private void animateArrow(boolean shouldRotateUp) {
-		int start = shouldRotateUp ? 0 : MAX_LEVEL;
-		int end = shouldRotateUp ? MAX_LEVEL : 0;
-		ObjectAnimator animator = ObjectAnimator.ofInt(arrowDrawable, "level", start, end);
-		animator.setInterpolator(new LinearOutSlowInInterpolator());
-		animator.start();
 	}
 }

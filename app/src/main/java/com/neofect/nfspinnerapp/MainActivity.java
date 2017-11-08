@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
 	private NFSpinner leftSpinner;
 	private NFSpinner rightSpinner;
+	private SpinnerAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
 		dataObjects.add(new DataObject("3", Color.GREEN));
 		dataObjects.add(new DataObject("4", Color.YELLOW));
 		dataObjects.add(new DataObject("5", Color.CYAN));
-		SpinnerAdapter adapter = new SpinnerAdapter(dataObjects);
+		adapter = new SpinnerAdapter(dataObjects);
+		adapter.notifyDataSetChanged();
 		rightSpinner.setAdapter(adapter);
 
 		rightSpinner.setListBackground(ContextCompat.getDrawable(this, R.drawable.rounded_board_bg));
