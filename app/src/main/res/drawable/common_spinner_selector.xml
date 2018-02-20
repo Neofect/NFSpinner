@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Selected -->
+    <item android:state_selected="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="3dp"/>
+                </shape>
+            </item>
+
+            <item
+                android:gravity="center_vertical"
+                android:right="18dp">
+                <bitmap
+                    android:gravity="right"
+                    android:src="@drawable/common_spinner_close_ic_n"/>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Pressed -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="3dp"/>
+                </shape>
+            </item>
+
+            <item
+                android:gravity="center_vertical"
+                android:right="18dp">
+                <bitmap
+                    android:gravity="right"
+                    android:src="@drawable/common_spinner_close_ic_n"/>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Normal -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="3dp"/>
+                </shape>
+            </item>
+
+            <item
+                android:gravity="center_vertical"
+                android:right="18dp">
+                <bitmap
+                    android:gravity="right"
+                    android:src="@drawable/common_spinner_open_ic_n"/>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>
