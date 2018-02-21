@@ -43,6 +43,7 @@ public class NFSpinner extends LinearLayout {
     private PopupWindow popupWindow;
     private RecyclerView recyclerView;
 	private View spinnerView;
+
     private NFSpinnerBaseAdapter adapter = null;
 	private OnItemSelectedListener onItemSelectedListener = null;
 
@@ -83,13 +84,13 @@ public class NFSpinner extends LinearLayout {
 		// onItemClick
 		recyclerView.setId(getId());
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+		recyclerView.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, RecyclerView.LayoutParams.WRAP_CONTENT));
 		//hide vertical and horizontal scrollbars
 		recyclerView.setVerticalScrollBarEnabled(false);
 		recyclerView.setHorizontalScrollBarEnabled(false);
 		recyclerView.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.rounded_board_bg));
 
 		popupWindow = new PopupWindow(recyclerView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		popupWindow.setContentView(recyclerView);
 		popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		popupWindow.setOutsideTouchable(true);
 		popupWindow.setFocusable(true);

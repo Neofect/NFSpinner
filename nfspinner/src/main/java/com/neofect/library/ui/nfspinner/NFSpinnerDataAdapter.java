@@ -20,7 +20,7 @@ public class NFSpinnerDataAdapter extends NFSpinnerListAdapter<String, NFSpinner
 	private static final int MAX_LEVEL = 10000;
 
 	private TextView spinnerTextView = null;
-	private Drawable drawable;
+	private Drawable drawableArrow;
 
 	public NFSpinnerDataAdapter(List<String> items) {
 		super(items);
@@ -31,8 +31,8 @@ public class NFSpinnerDataAdapter extends NFSpinnerListAdapter<String, NFSpinner
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.spinner_data_spinner_view, null);
 		spinnerTextView = (TextView) view.findViewById(R.id.spinner_textview);
 
-		drawable = ContextCompat.getDrawable(spinnerTextView.getContext(), R.drawable.spinner_data_view_arrow);
-		spinnerTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null);
+		drawableArrow = ContextCompat.getDrawable(spinnerTextView.getContext(), R.drawable.spinner_data_view_arrow);
+		spinnerTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, drawableArrow, null);
 
 		changeData(getSelectedIndex());
 
@@ -81,7 +81,7 @@ public class NFSpinnerDataAdapter extends NFSpinnerListAdapter<String, NFSpinner
 	private void animateArrow(boolean shouldRotateUp) {
 		int start = shouldRotateUp ? 0 : MAX_LEVEL;
 		int end = shouldRotateUp ? MAX_LEVEL : 0;
-		ObjectAnimator animator = ObjectAnimator.ofInt(drawable, "level", start, end);
+		ObjectAnimator animator = ObjectAnimator.ofInt(drawableArrow, "level", start, end);
 		animator.setInterpolator(new LinearOutSlowInInterpolator());
 		animator.start();
 	}
